@@ -42,7 +42,10 @@ function Navbar({ setDarkMode, darkMode, sectionScrollIds }: props) {
         } else { setNavbarTransparent(true) }
     }
     function handleScrollSection(sectionId: string) {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById(sectionId)?.scrollIntoView({
+            behavior: "smooth",
+            block: 'center',
+        });
     }
     return (
         <div className={`navbar  px-5 md:px-11 drop-shadow-lg fixed top-0 z-50 ${navbarTransparent ? "bg-transparent" : "bg-base-100"}`}>
