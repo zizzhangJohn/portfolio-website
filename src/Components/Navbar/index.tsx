@@ -47,7 +47,9 @@ function Navbar({ setDarkMode, darkMode, sectionScrollIds }: props) {
     return (
         <div className={`navbar  px-5 md:px-11 drop-shadow-lg fixed top-0 z-50 ${navbarTransparent ? "bg-transparent" : "bg-base-100"}`}>
             <div className="navbar-start">
-                <a className={`normal-case text-2xl font-extrabold hover:text-secondary ${navbarTransparent ? "text-neutral-content" : ""}`}>&#123;
+                <a className={`normal-case text-2xl font-extrabold hover:text-secondary ${navbarTransparent ? "text-neutral-content" : ""}`}
+                    onClick={() => handleScrollSection(sectionScrollIds[0])}
+                >&#123;
                     <span className='text-primary hidden md:inline'>John</span>
                     <span className='text-secondary hidden md:inline'>Zhang</span>
                     <span className='text-primary md:hidden'>J</span>
@@ -72,7 +74,8 @@ function Navbar({ setDarkMode, darkMode, sectionScrollIds }: props) {
             >
                 {navs.map((nav, index) => <li className="py-2 text-center w-full border-b-2 border-slate-200 hover:bg-primary" key={index} onClick={() => {
                     setMenuShow(false);
-                    handleScrollSection(sectionScrollIds[index])}}>{nav}</li>)}
+                    handleScrollSection(sectionScrollIds[index])
+                }}>{nav}</li>)}
             </ul>
         </div>
     )
